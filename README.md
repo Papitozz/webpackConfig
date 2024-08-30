@@ -6,3 +6,4 @@
 - npm i sass style-loader css-loader sass-loader
 - npm install image-minimizer-webpack-plugin imagemin imagemin-mozjpeg imagemin-pngquant imagemin-svgo --save-dev
 - npm install mini-css-extract-plugin css-minimizer-webpack-plugin -D
+- npm i -D clean-webpack-plugin

@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'development', // Устанавливаем режим разработки
@@ -24,6 +25,11 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin({
+          cleanOnceBeforeBuildPatterns: [
+            path.resolve(__dirname, 'dist'),
+          ],
+        }),
         // Плагин для извлечения CSS в отдельные файлы
         new MiniCssExtractPlugin({
             filename: '../css/[name].css', // Имя выходных CSS файлов
